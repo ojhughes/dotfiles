@@ -3,10 +3,9 @@ antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle git      # Enables the zsh completion from git
 antigen bundle git-extras# Enables the zsh completion from git
-#antigen bundle brew     # adds completion for the brew command
 antigen bundle dircycle # This is a small zle trick that lets you cycle your directory stack left or right using Ctrl+Shift+Left/Right
 #antigen bundle gnu-utils
-antigen bundle history
+antigen bundle history     # maven completion
 antigen bundle mvn     # maven completion
 antigen bundle copydir # Mac clipborad copy current directory
 antigen bundle copyfile    # Mac clipborad copy file
@@ -21,15 +20,14 @@ antigen bundle command-not-found
 antigen bundle common-aliases # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh
 
 antigen bundle sharat87/autoenv
-antigen bundle zsh-users/zsh-completions src
-antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle autojump # Enables autojump if installed with homebrew
 antigen bundle vi-mode
+antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
+antigen apply
 
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 bindkey -a '^[[3~' delete-key
 
 function boshenv() {
@@ -89,10 +87,7 @@ function boshenv() {
     fi
 }
 export GOPATH=$HOME/workspace/go
-export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-[[ -f /usr/local/lib/node_modules/generator-jhipster/node_modules/tabtab/.completions/jhipster.zsh ]] && . /usr/local/lib/node_modules/generator-jhipster/node_modules/tabtab/.completions/jhipster.zsh
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
 source /usr/local/bin/virtualenvwrapper.sh
@@ -106,4 +101,12 @@ function create-test-org() {
 target() {
     pcf --target $1 target
 }
+setopt APPEND_HISTORY          # history appends to existing file
+setopt HIST_FIND_NO_DUPS       # history search finds once only
+setopt HIST_IGNORE_ALL_DUPS    # remove all earlier duplicate lines
+setopt HIST_REDUCE_BLANKS      # trim multiple insgnificant blanks in history
+setopt HIST_NO_STORE           # remove the history (fc -l) command from the history when invoked
 
+HISTFILE=$HOME/.zsh/history    # history file location
+HISTSIZE=1000000               # number of history lines kept internally
+SAVEHIST=1000000
