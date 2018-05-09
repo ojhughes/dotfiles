@@ -1,4 +1,5 @@
 source /usr/local/share/antigen/antigen.zsh
+source ~/.aliases
 antigen bundle vi-mode
 antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
