@@ -114,3 +114,5 @@ HISTSIZE=1000000               # number of history lines kept internally
 SAVEHIST=1000000
 setopt    sharehistory      #Share history across terminals
 setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
