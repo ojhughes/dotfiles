@@ -28,7 +28,7 @@ antigen apply
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -a '^[[3~' delete-key
+bindkey -a '^[[3~' delete-char
 
 function boshenv() {
 
