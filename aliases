@@ -6,4 +6,4 @@ alias .....="cd ../../../.."
 alias chmox='chmod -x'
 alias ls='gls -AFh ${colorflag} --group-directories-first'
 alias ll='gls -AFltrh ${colorflag} --group-directories-first'
-
+alias git_current_branch='$(git rev-parse --abbrev-ref HEAD)

@@ -1,12 +1,13 @@
 let mapleader=','
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+call plug#begin('~/.vim/plugged')
 
-execute pathogen#infect()
-
+Plug 'stephpy/vim-yaml'
+Plug 'crusoexia/vim-monokai'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdcommenter'
 "syntax configuration
 syntax on
-colorscheme monokai
 filetype plugin indent on
 set nocompatible
 set t_Co=256
@@ -42,4 +43,5 @@ set wildmode=list:longest
 set wildignore+=*.DS_STORE,*.db,node_modules/**,*.jpg,*.png,*.gif
 vmap <D-c> "+y
 autocmd FileType yaml set autoindent shiftwidth=2 softtabstop=2 expandtab wrap linebreak textwidth=90 nolist
-
+call plug#end()
+colorscheme monokai

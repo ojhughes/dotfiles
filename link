@@ -47,5 +47,7 @@ link "tmux.conf" ".tmux.conf"
 link "vim" ".vim"
 link "vimrc" ".vimrc"
 link "zshrc" ".zshrc"
+link "inputrc" ".inputrc"
+link "aliases" ".aliases"
 
 echo -e "${BLACK}Done${NC}"

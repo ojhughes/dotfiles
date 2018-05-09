@@ -1,4 +1,5 @@
-source /usr/local/Cellar/antigen/2.2.3/share/antigen/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
+antigen bundle vi-mode
 antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle git      # Enables the zsh completion from git
@@ -11,7 +12,6 @@ antigen bundle copydir # Mac clipborad copy current directory
 antigen bundle copyfile    # Mac clipborad copy file
 antigen bundle dirpersist  # Make the dirstack more persistant for .zlogout
 antigen bundle docker      # Docker autocompletion
-antigen bundle sudo        # Defined shortcut keys: [Esc] [Esc]
 antigen bundle brew
 antigen bundle brew-cask
 #antigen bundle python      # aliase only?
@@ -21,9 +21,9 @@ antigen bundle common-aliases # https://github.com/robbyrussell/oh-my-zsh/blob/m
 
 antigen bundle sharat87/autoenv
 antigen bundle autojump # Enables autojump if installed with homebrew
-antigen bundle vi-mode
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen apply
 
 bindkey '^[[A' history-substring-search-up
@@ -90,6 +90,7 @@ export GOPATH=$HOME/workspace/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/workspace
+export LC_ALL=en_GB.UTF-8
 source /usr/local/bin/virtualenvwrapper.sh
 
 function rgbpw() {
@@ -107,6 +108,8 @@ setopt HIST_IGNORE_ALL_DUPS    # remove all earlier duplicate lines
 setopt HIST_REDUCE_BLANKS      # trim multiple insgnificant blanks in history
 setopt HIST_NO_STORE           # remove the history (fc -l) command from the history when invoked
 
-HISTFILE=$HOME/.zsh/history    # history file location
+HISTFILE=$HOME/.zsh_history    # history file location
 HISTSIZE=1000000               # number of history lines kept internally
 SAVEHIST=1000000
+setopt    sharehistory      #Share history across terminals
+setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
