@@ -5,13 +5,10 @@ antigen bundle z
 antigen bundle zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 antigen bundle git      # Enables the zsh completion from git
 antigen bundle git-extras# Enables the zsh completion from git
-antigen bundle dircycle # This is a small zle trick that lets you cycle your directory stack left or right using Ctrl+Shift+Left/Right
-#antigen bundle gnu-utils
 antigen bundle history     # maven completion
 antigen bundle mvn     # maven completion
 antigen bundle copydir # Mac clipborad copy current directory
 antigen bundle copyfile    # Mac clipborad copy file
-antigen bundle dirpersist  # Make the dirstack more persistant for .zlogout
 antigen bundle docker      # Docker autocompletion
 antigen bundle brew
 antigen bundle brew-cask
@@ -20,8 +17,7 @@ antigen bundle z           # z command
 antigen bundle command-not-found
 antigen bundle common-aliases # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh
 
-antigen bundle sharat87/autoenv
-antigen bundle autojump # Enables autojump if installed with homebrew
+#antigen bundle autojump # Enables autojump if installed with homebrew
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 antigen bundle zsh-users/zsh-syntax-highlighting

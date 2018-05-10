@@ -7,3 +7,5 @@ alias chmox='chmod -x'
 alias ls='gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFh --color --group-directories-first'
 alias ll='gls >/dev/null 2>&1 && CLICOLOR_FORCE=1 gls -aFhltr --color --group-directories-first'
 alias git_current_branch='$(git rev-parse --abbrev-ref HEAD)'
+alias brew_update="brew -v update; brew upgrade --force-bottle --cleanup; brew cleanup; brew cask cleanup; brew prune; brew doctor; npm-check -g -u"
+
